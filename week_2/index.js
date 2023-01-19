@@ -11,16 +11,24 @@ const server = http.createServer((request, response) => {
         request.url === '/' ? 'index.html' : request.url
     )
 
-    fs.readFile(filePath, (err, content) => {
+    if(request.url == "/person") {
+        response.writeHead(200,)
+        let person1 = new Person("John Smith", 25)
+        responde.end(JSON.stringify(person1))
+    }
+
+
+    fs.readFile(filePath, (err, content) => {'Content-Type' : 'text/html' })
         if (err) { 
-            if(err.code == 'EN0ENT'){
-                response.writeHead(404, {'Content-Type' : "text/html" })
+            if(err.code == 'EN0ENT') {
+                response.writeHead(404, {'Content-Type' : 'text/html' })
                 if(err.code == 'EN0ENT') {
                     fs.readFile(path.join(__dirname, "public", "404.html"), (err, content) => {
                     response.end(content, 'utf8')
             })
         } else {
             response.end(`Error: ${err.code}`)
+        } 
     } else {
         response.writeHead(200, {'Content-Type' : 'text/html'})
         response.end(content, 'utf8')
