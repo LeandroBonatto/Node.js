@@ -12,10 +12,11 @@ const server = http.createServer((request, response) => {
     )
 
     if(request.url == "/person") {
-        response.writeHead(200,)
+        response.writeHead(200, 'Content-Type' : 'application/json')
         let person1 = new Person("John Smith", 25)
         responde.end(JSON.stringify(person1))
-    }
+    } else if (request.url == "/person")
+    response.writeHead(200, 'Content-Type' : 'application/json')
 
 
     fs.readFile(filePath, (err, content) => {'Content-Type' : 'text/html' })
