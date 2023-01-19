@@ -19,12 +19,12 @@ const server = http.createServer((request, response) => {
                     response.end(content, 'utf8')
             })
         } else {
-            response.end(content, )
-        }
-
-        response.writeHead(200, {"Content-Type": "text/html"})
-        response.end(content, "utf8")
+            response.end(`Error: ${err.code}`)
+    } else {
+        response.writeHead(200, {'Content-Type' : 'text/html'})
+        response.end(content, 'utf8')
+    }
     })
-})
+});
 
 .listen(8000, () => console.log('Server Running...'))
