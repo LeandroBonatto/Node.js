@@ -27,4 +27,5 @@ const server = http.createServer((request, response) => {
     })
 });
 
-.listen(8000, () => console.log('Server Running...'))
+const PORT = process.env.PORT || 8000
+server.listen(PORT, () => console.log('Server Running...'))
