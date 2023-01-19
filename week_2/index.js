@@ -1,6 +1,7 @@
 const http = require("http")
 const path = require("path")
 const fs = require("fs")
+const Person = require("./person.js")
 
 const server = http.createServer((request, response) => {
     console.log(request.url)
