@@ -2,16 +2,16 @@ const http = require("http")
 const path = require("path")
 const fs = require("fs")
 
-http.createServer((request, response) => {
+const server = http.createServer((request, response) => {
     console.log(request.url)
-
     let filePath = path.join(
-        __dirname, "public",
-        request.url === "/" ? "index.html" : request.url + ".html"
+        __dirname,
+        'public',
+        request.url === '/' ? 'index.html' : request.url
     )
 
     fs.readFile(filePath, (err, content) => {
-        if (err){
+        if (err){ 
             if(err.code == 'EN0ENT'){
                 response.writeHead(404, {'ontent-Type' : "text/html" })
                 fs.readFile(path.join(__dirname, "public", "404.html"), (err, content) => {
