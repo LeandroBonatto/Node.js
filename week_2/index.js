@@ -32,7 +32,7 @@ const server = http.createServer((request, response) => {
             response.writeHead(200, {'Content-Type' : 'application/json'});
     }
 
-        for(var i=0; i<5; ++i){
+     /*   for(var i=0; i<5; ++i){
             setTimeout(() => {
             console.log(`var i: ${i}`)
         }, 1000)
@@ -43,8 +43,18 @@ const server = http.createServer((request, response) => {
             console.log(`var i: ${i}`)
         }, 1000)
     }
+    */
 
-        responde.end("test")
+        function sum(...nums) {
+            console.log(nums.reduce((total, num) => {total += num}, 0))
+            console.log(sum)
+            return sum
+        }
+            let sum = sum()
+        }
+
+
+        responde.end("Sucess")
     }
 
     fs.readFile(filePath, (err, content) => {'Content-Type' : 'text/html' })
