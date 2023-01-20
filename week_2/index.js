@@ -27,7 +27,7 @@ const server = http.createServer((request, response) => {
             sum += num
         });
 
-        response.end(JSON.stringify(sum)) 
+        response.end(JSON.stringify(sum)) {
     } else if (request.url == "/sum") {
             response.writeHead(200, {'Content-Type' : 'application/json'});
     }
@@ -66,7 +66,7 @@ const server = http.createServer((request, response) => {
 
     */
 
-        responde.end("Sucess")
+        responde.end("Sucess") {
     }
 
     fs.readFile(filePath, (err, content) => {'Content-Type' : 'text/html' })
