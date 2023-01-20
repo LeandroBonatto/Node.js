@@ -15,8 +15,17 @@ const server = http.createServer((request, response) => {
         response.writeHead(200, 'Content-Type' : 'application/json')
         let person1 = new Person("John Smith", 25)
         responde.end(JSON.stringify(person1))
-    } else if (request.url == "/person")
-    response.writeHead(200, 'Content-Type' : 'application/json')
+    } else if (request.url == "/sum") {
+        response.writeHead(200, 'Content-Type' : 'application/json'});
+
+        nums = [1, 2, 3, 4]
+        sum = 0
+
+        nums.array.forEach(num => {
+            sum += num
+        });
+
+        response.end(sum)
 
 
     fs.readFile(filePath, (err, content) => {'Content-Type' : 'text/html' })
