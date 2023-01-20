@@ -2,6 +2,7 @@ const http = require("http")
 const path = require("path")
 const fs = require("fs")
 const Person = require("./person.js")
+const { sum } = require("lodash")
 
 const server = http.createServer((request, response) => {
     console.log(request.url)
@@ -12,20 +13,21 @@ const server = http.createServer((request, response) => {
     )
 
     if(request.url == "/person") {
-        response.writeHead(200, 'Content-Type' : 'application/json')
+        response.writeHead(200, {'Content-Type' : 'application/json'})
         let person1 = new Person("John Smith", 25)
         responde.end(JSON.stringify(person1))
     } else if (request.url == "/sum") {
-        response.writeHead(200, 'Content-Type' : 'application/json'});
+        response.writeHead(200, {'Content-Type' : 'application/json'});
 
         nums = [1, 2, 3, 4]
         sum = 0
 
-        nums.array.forEach(num => {
+        nums.array.forEach(function (num) => {
+            console.log(this)
             sum += num
         });
 
-        response.end(sum)
+        response.end(JSON.stringify(sum))
 
 
     fs.readFile(filePath, (err, content) => {'Content-Type' : 'text/html' })
