@@ -45,7 +45,7 @@ const server = http.createServer((request, response) => {
     }
     */
 
-        function sum(...nums) {
+    /*    function sum(...nums) {
             console.log(nums.reduce((total, num) => {total += num}, 0))
             console.log(sum)
             return sum
@@ -53,7 +53,18 @@ const server = http.createServer((request, response) => {
             let sum = sum[1, 2, 4, 10, 30, 4, 10, 20]
             console.log(total)
         }
+    
+    */
+        
+    /* const numbers = [10, 2, 3, 1, 30]
 
+    const [one, two, ...rest] = numbers
+
+    console.log(one)
+    console.log(two)
+    console.log(rest)
+
+    */
 
         responde.end("Sucess")
     }
