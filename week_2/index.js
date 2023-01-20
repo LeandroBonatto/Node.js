@@ -50,7 +50,8 @@ const server = http.createServer((request, response) => {
             console.log(sum)
             return sum
         }
-            let sum = sum()
+            let sum = sum[1, 2, 4, 10, 30, 4, 10, 20]
+            console.log(total)
         }
 
 
