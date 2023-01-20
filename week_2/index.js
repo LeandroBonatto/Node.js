@@ -27,8 +27,16 @@ const server = http.createServer((request, response) => {
             sum += num
         });
 
-        response.end(JSON.stringify(sum))
+        response.end(JSON.stringify(sum)) {
+    } else if (request.url == "/sum") {
+            response.writeHead(200, {'Content-Type' : 'application/json'});
+    }
 
+        for(var i=0; i<5; ++i){
+            setTimeout(() => {
+            console.log(`var i: ${i}`)
+        }, 1000)
+    }
 
     fs.readFile(filePath, (err, content) => {'Content-Type' : 'text/html' })
         if (err) { 
