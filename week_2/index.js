@@ -44,29 +44,24 @@ const server = http.createServer((request, response) => {
         }, 1000)
     }
     */
-
-    /*    function sum(...nums) {
-            console.log(nums.reduce((total, num) => {total += num}, 0))
-            console.log(sum)
+        function sum(...nums) {
+            console.log(nums.reduce((total, num) => total += num, 0))
             return sum
         }
-            let sum = sum[1, 2, 4, 10, 30, 4, 10, 20]
+            let total = sum[1, 2, 4, 10, 30, 4, 10, 20]
             console.log(total)
         }
-    
-    */
-        
-    /* const numbers = [10, 2, 3, 1, 30]
 
-    const [one, two, ...rest] = numbers
+        const numbers = [10, 2, 3, 1, 30]
 
-    console.log(one)
-    console.log(two)
-    console.log(rest)
+        const [one, two, ...rest] = numbers
 
-    */
+        console.log(one)
+        console.log(two)
+        console.log(rest)
 
-        responde.end("Sucess") {
+
+        responde.end("Sucess") 
     }
 
     fs.readFile(filePath, (err, content) => {'Content-Type' : 'text/html' })
