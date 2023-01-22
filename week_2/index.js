@@ -43,7 +43,7 @@ const server = http.createServer((request, response) => {
             console.log(`var i: ${i}`)
         }, 1000)
     }
-    */
+    
         function sum(...nums) {
             console.log(nums.reduce((total, num) => total += num, 0))
             return sum
@@ -59,7 +59,15 @@ const server = http.createServer((request, response) => {
         console.log(one)
         console.log(two)
         console.log(rest)
+    */
 
+        var name = "n0112"
+
+        var obj = {
+            [name]: "hello"
+        }
+
+        console.log(obj)
 
         responde.end("Sucess") 
     }
