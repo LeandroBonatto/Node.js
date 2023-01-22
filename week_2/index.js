@@ -28,13 +28,11 @@ const server = http.createServer((request, response) => {
         });
 
         response.end(JSON.stringify(sum)) 
-    }
-
-    else if (request.url == "/sum") {
+    } else if (request.url == "/node") {
             response.writeHead(200, {'Content-Type' : 'application/json'});
     }
 
-     /*   for(var i=0; i<5; ++i){
+     /*   for(var i=0; i<5; ++i) {
             setTimeout(() => {
             console.log(`var i: ${i}`)
         }, 1000)
