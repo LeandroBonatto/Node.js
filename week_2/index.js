@@ -19,16 +19,18 @@ const server = http.createServer((request, response) => {
     } else if (request.url == "/sum") {
         response.writeHead(200, {'Content-Type' : 'application/json'});
 
-        nums = [1, 2, 3, 4]
+        nums = [1,2,3,4, 10, 20]
         sum = 0
 
-        nums.array.forEach(function (num) => {
+        nums.forEach((num) => {
             console.log(this)
             sum += num
         });
 
-        response.end(JSON.stringify(sum)) {
-    } else if (request.url == "/sum") {
+        response.end(JSON.stringify(sum)) 
+    }
+
+    else if (request.url == "/sum") {
             response.writeHead(200, {'Content-Type' : 'application/json'});
     }
 
