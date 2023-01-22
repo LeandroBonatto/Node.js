@@ -1,7 +1,7 @@
-const http = require("http")
-const path = require("path")
-const fs = require("fs")
-const Person = require("./person.js")
+const http = require("http");
+const path = require("path");
+const fs = require("fs");
+const Person = require("./person")
 const { sum } = require("lodash")
 
 const server = http.createServer((request, response) => {
@@ -13,9 +13,9 @@ const server = http.createServer((request, response) => {
     )
 
     if(request.url == "/person") {
-        response.writeHead(200, {'Content-Type' : 'application/json'})
+        response.writeHead(200, {'Content-Type' : 'application/json'});
         let person1 = new Person("John Smith", 25)
-        responde.end(JSON.stringify(person1))
+        response.end(JSON.stringify(person1))
     } else if (request.url == "/sum") {
         response.writeHead(200, {'Content-Type' : 'application/json'});
 
@@ -78,25 +78,26 @@ const server = http.createServer((request, response) => {
         console.log(one)
         console.log(two)
 
-        responde.end("Sucess") 
+        response.end("Success") 
     }
 
     fs.readFile(filePath, (err, content) => {
         if (err) {
-                response.writeHead(404, {'Content-Type' : 'text/html' });
-                if(err.code == 'EN0ENT') {
-                    fs.readFile(path.join(__dirname, "public", "404.html"), (err, content) => {
+            response.writeHead(404, {'Content-Type' : 'text/html'});
+            if (err.code == 'ENOENT'){
+                fs.readFile(path.join(__dirname, "public", "404.html"), (err, content) => {
                     response.end(content, 'utf8')
                 })
+            } else {
+                response.end(`Error: ${err.code}`)
+            }
         } else {
-            response.end(`Error: ${err.code}`)
-        } 
-    } else {
-        response.writeHead(200, {'Content-Type' : 'text/html'})
-        response.end(content, 'utf8')
-    }
-    })
+            response.writeHead(200, {'Content-Type' : 'text/html'});
+            response.end(content, 'utf8')
+        }
+        })
 });
+
 
 const PORT = process.env.PORT || 8000
 server.listen(PORT, () => console.log(`Server Running on port ${PORT}`));
