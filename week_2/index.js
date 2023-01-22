@@ -9,7 +9,7 @@ const server = http.createServer((request, response) => {
     let filePath = path.join(
         __dirname,
         'public',
-        request.url === '/' ? 'index.html' : request.url
+        request.url === '/' ? 'index.html' : request.url + ".html"
     )
 
     if(request.url == "/person") {
